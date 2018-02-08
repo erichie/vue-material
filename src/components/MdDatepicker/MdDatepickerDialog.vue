@@ -305,10 +305,14 @@
       },
       switchMonth (index) {
         this.currentDate = setMonth(this.currentDate, index)
+        this.selectedDate = this.currentDate
+        this.$emit('update:mdDate', this.selectedDate)
         this.currentView = 'day'
       },
       switchYear (year) {
         this.currentDate = setYear(this.currentDate, year)
+        this.selectedDate = this.currentDate
+        this.$emit('update:mdDate', this.selectedDate)
         this.currentView = 'month'
       },
       selectDate (day) {
